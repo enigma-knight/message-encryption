@@ -75,7 +75,7 @@ The lone and level sands stretch far away.”'''
 
 print(encode(msg))
 
+print("\n\n")
 
-print('\n{----\n')
 pangram = 'Pack my box with five dozen liquor jugs.' # has every letter in the English alphabet in it.
 print(encode(pangram))
