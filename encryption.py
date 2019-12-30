@@ -1,5 +1,7 @@
 import re
 
+groups = 7 # change this to change the grouping of letters in the encrypted version of the message.
+
 alph = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 f = lambda n: f(n - 1) + n if n > 1 else 1 # this is how it determines which letter to use; mathematically, anyway.
@@ -42,7 +44,7 @@ def sep(s, no):
 def encode(m):
     # this actually takes the groups of seven and encodes each letter. 
     m = tidy_msg(m)
-    m = sep(m, 7)
+    m = sep(m, groups)
     m = m.split()
     msg = []
     for block in m:
