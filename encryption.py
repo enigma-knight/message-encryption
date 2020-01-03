@@ -1,5 +1,7 @@
 import re
 
+vers = '1.1.2'
+
 groups = 7 # change this to change the grouping of letters in the encrypted version of the message.
 
 alph = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -55,6 +57,31 @@ def encode(m):
         msg.append(''.join(ltrs))
     msg = ' '.join(msg)
     return msg
+
+
+def docs():
+    print("""encryption.py v{}
+    Thank you for using encryption.py. These docs are a brief breakdown of them
+    encryption method and how to use it.
+
+    A normal Caesar substitution cypher takes a letter and offsets it by n letters.
+    A small example chart: n by letter
+        0 1 2 3 4 5
+        A B C D E F
+        B C D E F G
+        C D E F G H
+        D E F G H I
+    This cypher takes the message into groups of s, then takes each letter and
+    replaces it with another based on a function f of its position p in that group.
+    It removes all non-letter symbols sans [? and (! and .)], replacing those with qq and
+    qp respectively.
+
+    The default group size in the algorithm is 7, and that was the originally
+    intended value. No real testing of other values greater than 7 have been done,
+    so be aware of the possibility of unwieldy or difficult to decrypt outputs.
+    The group size is defined as `encryption.groups`.
+
+    To encrypt a message, use `encryption.encode(message)`.""".format(vers))
 
 
 if __name__ == "__main__":
