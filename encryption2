@@ -40,47 +40,47 @@ def letter_distr (m):
 
 def tidy_msg (m):
     ''' cleans up the message, and replaces certain symbols with letters. '''
-	qq='QQ'
-	period=['QP','PQ']
-	space=['QS','SQ']
-	m=m.replace ('.',period[m.find('.')%2])  # replaces periods with qp or pq.
-	m=m.replace ('!',period[m.find('!')%2])  # replaces exclamation points with qp or pq, like a period.
-	m=re.sub("[^a-zA-Z]+", " ", m)  # gets rid of all non letter symbols.
-	m=m.replace (' ',space[m.find(' ')%2])  # removes spaces.
-	m=m.replace ('?',qq)  # replaces question marks with qq.
-	m=m.upper()
-	return m
+    qq='QQ'
+    period=['QP','PQ']
+    space=['QS','SQ']
+    m=m.replace ('.',period[m.find('.')%2])  # replaces periods with qp or pq.
+    m=m.replace ('!',period[m.find('!')%2])  # replaces exclamation points with qp or pq, like a period.
+    m=re.sub("[^a-zA-Z]+", " ", m)  # gets rid of all non letter symbols.
+    m=m.replace (' ',space[m.find(' ')%2])  # removes spaces.
+    m=m.replace ('?',qq)  # replaces question marks with qq.
+    m=m.upper()
+    return m
 
 def sep(s, no): # this function courtesy of Coding Panda on SoloLearn. I only made slight alterations.
     ''' separates the message into groups of no. This is crucial for the encryption method. '''
-	c = 0
-	n = ""
-	for i in s:
-		if(i == " "):
-			continue
-		if(c == no-1):
-			n += i+" "
-			c = 0
-		else:
-			n += i
-			c = c + 1
-	return n
+    c = 0
+    n = ""
+    for i in s:
+        if(i == " "):
+	    continue
+	if(c == no-1):
+	    n += i+" "
+	    c = 0
+	else:
+	    n += i
+	    c = c + 1
+    return n
 
 def encode (m):
     ''' actually encodes the entire message.
     This particular encryption method is based around 7, although
     a higher number would be more secure, I haven't gone into how
     it would really affect it. '''
-	m=tidy_msg(m)
-	m=sep(m,7)  # you could change this to any other positive integer to experiment.
-	m=m.split()
-	msg=[]
-	for block in m:
-		ltrs=[]
-		for p in range(len(block)):
-			l=block[p]
-			ltrs.append(enc(l,p+1))
-		msg.append(''.join(ltrs))
+    m=tidy_msg(m)
+    m=sep(m,7)  # you could change this to any other positive integer to experiment.
+    m=m.split()
+    msg=[]
+    for block in m:
+        ltrs=[]
+	for p in range(len(block)):
+	    l=block[p]
+	    ltrs.append(enc(l,p+1))
+	    msg.append(''.join(ltrs))
 	msg=' '.join(msg)
 	return msg
 
@@ -91,5 +91,5 @@ print('L: original || encoded')
 for i in range(len(letter_distr(encode(msg)))):
     ''' this is to show the original distribution of letters,
     then the distribution after encoding. '''
-	print(alph[i],letter_distr(msg)[i],end=' || ')
-	print(letter_distr(encode(msg))[i])
+    print(alph[i],letter_distr(msg)[i],end=' || ')
+    print(letter_distr(encode(msg))[i])
