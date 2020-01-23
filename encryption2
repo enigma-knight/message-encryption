@@ -35,7 +35,7 @@ def letter_distr (m):
 	msg=re.sub("[^a-zA-Z]+", "", m).upper()  # gets rid of non letter symbols, so when you count the size of the messaage, they don't have an affect.
         msg = ''.join(msg.split())
 	for l in alph:
-		letters.append("{0:.4f}%".format(100*msg.count(l)/len(msg)))
+	    letters.append("{0:.4f}%".format(100*msg.count(l)/len(msg)))
 	return letters
 
 def tidy_msg (m):
