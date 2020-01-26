@@ -1,19 +1,13 @@
 import re
 
-msg = '''I met a traveller from an antique land,
-Who said—“Two vast and trunkless legs of stone
-Stand in the desert. . . . Near them, on the sand,
-Half sunk a shattered visage lies, whose frown,
-And wrinkled lip, and sneer of cold command,
-Tell that its sculptor well those passions read
-Which yet survive, stamped on these lifeless things,
-The hand that mocked them, and the heart that fed;
-And on the pedestal, these words appear:
-My name is Ozymandias, King of Kings;
-Look on my Works, ye Mighty, and despair!
-Nothing beside remains. Round the decay
-Of that colossal Wreck, boundless and bare
-The lone and level sands stretch far away.”'''
+file_to_read = 'origin_of_species.txt'  # or you could use message.txt, which is the poem Ozymandias.
+file_to_write_to = 'encrypted.txt'
+
+
+print(f'reading file...', end=' ')
+with open(file_to_read, 'r', encoding='utf-8') as file:
+    msg = file.read()
+print('done.')
 
 alph = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 alph2 = 'ÆBÇĐËFĢHÎJĶŁMŃØPQŔ§ÞŮVWXÝŻ'  # this was to test it to see if you could switch it over to another group of letters, to make the output more mysterious lol
@@ -35,8 +29,9 @@ def letter_distr (m):
     msg=re.sub("[^a-zA-Z]+", "", m).upper()  # gets rid of non letter symbols, so when you count the size of the messaage, they don't have an affect.
     msg = ''.join(msg.split())
     for l in alph:
-        letters.append("{0:.4f}%".format(100*msg.count(l)/len(msg)))
+        letters.append("{0:.4f}".format(100*msg.count(l)/len(msg)))
     return letters
+
 
 def tidy_msg (m):
     ''' cleans up the message, and replaces certain symbols with letters. '''
@@ -68,6 +63,7 @@ def sep(s, no):
             c += 1
     return n
 
+
 def encode(m):
     ''' actually encodes the entire message.
     This particular encryption method is based around 7, although
@@ -86,12 +82,22 @@ def encode(m):
     msg = ' '.join(msg)
     return msg
 
-print(encode(msg))
-for letter in alph:
-    print(letter, encode(letter * 7))
+print('encrypting message...', end=' ')
+encrypted = encode(msg)
+print('done.\n')
+print(encrypted[:1000], '...\n')
+
+
+with open(file_to_write_to, 'w') as file:
+    file.write(encrypted)
+
+print('checking letter distribution...', end=' ')
+a = letter_distr(msg)
+b = letter_distr(encode(msg))
+print('done.')
 
 for i in range(len(letter_distr(encode(msg)))):
     ''' this is to show the original distribution of letters,
     then the distribution after encoding. '''
-    print(alph[i], letter_distr(msg)[i], end = ' || ')
-    print(letter_distr(encode(msg))[i])
+    print(alph[i], a[i], '||', b[i], '||', eval(a[i]) / (eval(a[i]) + eval(b[i])))
+    
