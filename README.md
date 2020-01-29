@@ -9,5 +9,5 @@ This script takes a message and encodes it with a positionally determined encryp
 > GHFBDNS XRLBOUS TTCKHNW OVWIPQJ TT
 
 <h3>Basic use case:</h3>
-> To change the file that you want to be encrypted, go to `file_to_encrypt` and change it to the path you want. After running the script, it will write it to `encrypted.txt`. Open it to see the encrypted version.
+> To change the file that you want to be encrypted, go to `file_to_encrypt` and change it to the path you want. After running the >script, it will write it to `encrypted.txt`. Open it to see the encrypted version.
 >
