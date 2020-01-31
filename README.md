@@ -1,4 +1,7 @@
 # <a href="https://github.com/oakenduck/message-encryption">message-encryption v2.1.0</a>
+
+<span style="text-decoration:underline">this</span>
+
  This script takes a message and encodes it with a positionally determined encryption algorithm. This affects letter distribution in a way that makes it difficult to find a pattern, and therefore difficult to decode.
  
  ***
