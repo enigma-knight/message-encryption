@@ -19,7 +19,7 @@ After running the script, it will write it to `encrypted.txt`. Open it to see th
  ```
  
  
- <h4><u><i>BE ADVISED!!</i><br>The script will not encrypt numbers into letters. This will be included in a future patch.</u></h4>
+ <h4><i>BE ADVISED!!</i><br><u>The script will not encrypt numbers into letters. This will be included in a future patch.</u></h4>
  
  ***
  
