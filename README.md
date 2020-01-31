@@ -52,6 +52,7 @@ After running the script, it will write it to `encrypted.txt`. Open it to see th
 | Z | 0.0395% | 2.0077% |
 
 <p>As can be seen, several letter, most notably A and E, are misrepresented in distribution after encryption, with both reducing in distribution by up to <i>10</i>%. The letters that in English are not nearly as common, Z being the least common, go up by a few percent on average. Typically, any one letter, in either encrypted or unencrypted form, has an average of ~<i>3.8461</i>%.<br>If we compare all the letters in both versions to that average, we get a second distribution:</p>
+
 | Letter | Comparison, unencrypted | Comparison, encrypted |
 | ------ | ----------------------- | --------------------- |
 | A | 2.1917% | 0.9719% |
