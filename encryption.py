@@ -82,22 +82,26 @@ def encode(m):
     msg = ' '.join(msg)
     return msg
 
+
 print('encrypting message...', end=' ')
 encrypted = encode(msg)
 print('done.\n')
-print(encrypted[:1000], '...\n')
 
+if len(encrypted) > 1000:
+    print(encrypted[:1000], '...\n')
+else:
+    print(encrypted, '\n')
 
 with open(file_to_write_to, 'w') as file:
     file.write(encrypted)
 
 print('checking letter distribution...', end=' ')
-a = letter_distr(msg)
-b = letter_distr(encode(msg))
+a = letter_distr(msg)  # finds distribution of the orignal message.
+b = letter_distr(encode(msg))  # finds distribution of the encrypted version.
 print('done.')
 
 for i in range(len(letter_distr(encode(msg)))):
     ''' this is to show the original distribution of letters,
     then the distribution after encoding. '''
-    print(alph[i], a[i], '||', b[i], '||', eval(a[i]) / (eval(a[i]) + eval(b[i])))
+    print(f'| {alph[i]} | {a[i]} | {b[i]} |')
     
