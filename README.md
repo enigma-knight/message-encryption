@@ -1,6 +1,5 @@
 # <a href="https://github.com/oakenduck/message-encryption">message-encryption v2.1.0</a>
 
-<span style="text-decoration:underline">this</span>
 
  This script takes a message and encodes it with a positionally determined encryption algorithm. This affects letter distribution in a way that makes it difficult to find a pattern, and therefore difficult to decode.
  
@@ -22,7 +21,7 @@ After running the script, it will write it to `encrypted.txt`. Open it to see th
  ```
  
  
- <h4><i>BE ADVISED!!</i><br>_The script will not encrypt numbers into letters. This will be included in a future patch._</h4>
+ <h4><i>BE ADVISED!!</i><br>__The script will not encrypt numbers into letters. This will be included in a future patch.__</h4>
  
  ***
  
