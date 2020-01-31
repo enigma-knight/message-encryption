@@ -22,7 +22,7 @@ After running the script, it will write it to `encrypted.txt`. Open it to see th
  
 <p>After executing this script, the size of the message increases, typically by ~<i>30%</i>*, and skews the letter distribution rather impressively.</p>
 
-| Letter | Dist. Before | Dist. Post |
+| Letter | Distr. Before | Distr. After |
 | ------ | ------------ | ---------- |
 | A | 8.4297 | 3.7382 |
 | B | 1.5086 | 2.9069 |
