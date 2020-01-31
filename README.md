@@ -13,12 +13,12 @@
  <p>To change the file that you want to be encrypted, go to `file_to_encrypt` and change it to the path you want. 
 After running the script, it will write it to `encrypted.txt`. Open it to see the encrypted version.</p>
 
-<h3><i>BE ADVISED!!</i><br>The script will not encrypt numbers into letters. This will be included in a future patch.</h3>
-
  ```python
  file_to_read = 'message.txt'  # change this is if you like, or change the contents of message.txt
  file_to_write_to = 'encrypted.txt'  # this is where it will write the encrypted version to.
  ```
+ 
+ <h4><i>BE ADVISED!!</i><br>The script will not encrypt numbers into letters. This will be included in a future patch.</h4>
  
  ***
  
