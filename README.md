@@ -1,6 +1,7 @@
 # message-encryption
  This script takes a message and encodes it with a positionally determined encryption algorithm. This affects letter distribution in a way that makes it difficult to find a pattern, and therefore difficult to decode.
-
+ 
+ ***
 
 *ex. input:*
 > Hello world! Wassup y'all?
@@ -16,3 +17,7 @@ After running the script, it will write it to `encrypted.txt`. Open it to see th
  file_to_read = 'message.txt'  # change this is if you like, or change the contents of message.txt
  file_to_write_to = 'encrypted.txt'  # this is where it will write the encrypted version to.
  ```
+ 
+ ***
+ 
+<p>After executing this script, the size of the message increases, typically by *~30%*, and skews the letter distribution rather impressively.</p>
