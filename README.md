@@ -27,6 +27,7 @@ After running the script, it will write it to `encrypted.txt`. Open it to see th
 ```
 
 <br/><br/>
+
  ***
  
 <p>After executing this script, the size of the message increases, typically by ~<i>30%</i>, and skews the letter distribution rather impressively.<br>This is data taken from <i>War of the Worlds</i>:</p>
