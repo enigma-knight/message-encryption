@@ -20,8 +20,10 @@ After running the script, it will write it to `encrypted.txt`. Open it to see th
  file_to_write_to = 'encrypted.txt'  # this is where it will write the encrypted version to.
  ```
  
- 
- <h4><i>BE ADVISED!!</i><br>__The script will not encrypt numbers into letters. This will be included in a future patch.__</h4>
+ ```diff
+- WARNING!!
+- The script will not encrypt numbers into letters. This will be included in a future patch.
+```
  
  ***
  
