@@ -10,7 +10,6 @@ with open(file_to_read, 'r', encoding='utf-8') as file:
 print('done.')
 
 alph = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-alph2 = 'ÆBÇĐËFĢHÎJĶŁMŃØPQŔ§ÞŮVWXÝŻ'  # this was to test it to see if you could switch it over to another group of letters, to make the output more mysterious lol
 
 f = lambda n: f(n-1)+n if n>1 else 1  # this is how I determined how the letter would be replaced, so the first letter in a group of 7 would go up or down 1, second would go up or down 3, then 6, 10, 15, etc.
 s = lambda x,p: (f(p)*(-1)**(x))  # this actually says whether it should go up or down, depending on if it is an evenly indexed or oddly indexed letter.
