@@ -102,5 +102,7 @@ print('done.')
 for i in range(len(letter_distr(encode(msg)))):
     ''' this is to show the original distribution of letters,
     then the distribution after encoding. '''
-    print(f'| {alph[i]} | {a[i]} | {b[i]} |')
+    print(f'| {alph[i]} | {a[i]} | {b[i]} |')  # done in a md table format for analysis.
+    
+print('Thank you for using encryption.py! Check out the dev at https://github.com/oakenduck')
     
